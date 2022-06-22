@@ -161,6 +161,12 @@ if (desc_in == "suc-in-agt") {
       'Data Peminjaman Telah Dihapus',
       'success'
     )
+} else if (desc_in == "suc-del-pinbook") {
+    Swal.fire(
+      'Berhasil Menghapus!',
+      'Data Peminjaman Telah Dihapus',
+      'success'
+    )
 } else if (desc_in == "suc-in-kem") {
     Swal.fire(
       'Berhasil!',

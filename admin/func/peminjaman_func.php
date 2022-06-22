@@ -66,6 +66,19 @@
 			echo '<script language="javascript"> window.location.href = "../index.php?desc=fal-del-pin" </script>';
 		}
 
+	} elseif($action == "delete-one") {
+
+		$id_peminjaman = $_GET['id_peminjaman'];
+		$kode_agt 	   = $_GET['kode_agt'];
+
+		$result = mysqli_query($mysqli, "DELETE FROM tb_peminjaman WHERE id_peminjaman = '$id_peminjaman'") or die(mysqli_error($mysqli));
+
+		if ($result) {
+			echo '<script language="javascript"> window.location.href = "../detail_peminjaman.php?desc=suc-del-pinbook&kode_agt='.$kode_agt.'" </script>';
+		} else {
+			echo '<script language="javascript"> window.location.href = "../detail_peminjaman.php?desc=fal-del-pinbook" </script>';
+		}
+
 	}
 
 ?>

@@ -93,12 +93,12 @@
                     <td>
                       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dikembalikan<?php echo $data3['kode_buku']; ?>">Dikembalikan</button>
                       <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#edit-pinjam<?php echo $data3['kode_buku']; ?>">Edit</button>
-                      <button type="button" class="btn btn-danger conf-del-detpin<?php echo $data3['kode_agt']; ?>">Hapus</button>
+                      <button type="button" class="btn btn-danger conf-del-detpin<?php echo $data3['kode_buku']; ?>">Hapus</button>
                     </td>
                   </tr>
 
                   <script type="text/javascript">
-                    $('.conf-del-detpin<?php echo $data3['kode_agt']; ?>').on('click', function(e) {
+                    $('.conf-del-detpin<?php echo $data3['kode_buku']; ?>').on('click', function(e) {
                       Swal.fire({
                         title: 'Anda Yakin?',
                         text: "Ingin Menghapus Pinjaman <?php echo $data3['judul']; ?>!",
@@ -109,7 +109,7 @@
                         confirmButtonText: 'Ya, Yakin!'
                       }).then((result) => {
                         if (result.isConfirmed) {
-                          window.location.href = "<?php echo 'func/peminjaman_func.php?action=delete-all&kode_agt='.$data3['kode_agt'] ?>";
+                          window.location.href = "<?php echo 'func/peminjaman_func.php?action=delete-one&id_peminjaman='.$data3['id_peminjaman'].'&kode_agt='.$data3['kode_agt'] ?>";
                         }
                       })
                     });
@@ -270,7 +270,7 @@
         <div class="desc-in" data-flashdata="<?php echo $desc; ?>"></div>
       <?php } elseif ($desc == "suc-in-kem") { ?>
         <div class="desc-in" data-flashdata="<?php echo $desc; ?>"></div>
-      <?php } elseif ($desc == "suc-del-agt") { ?>
+      <?php } elseif ($desc == "suc-del-pinbook") { ?>
         <div class="desc-in" data-flashdata="<?php echo $desc; ?>"></div>
       <?php } ?>
   <?php
